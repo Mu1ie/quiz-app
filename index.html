@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اختبار تفاعلي</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div id="app">
+
+      <!-- شاشة البداية -->
+      <div id="start-screen" class="screen">
+        <h1>🧠 اختبار المعلومات العامة</h1>
+        <p>10 أسئلة — 30 ثانية لكل سؤال</p>
+        <button id="start-btn">ابدأ الاختبار</button>
+      </div>
+
+      <!-- شاشة السؤال -->
+      <div id="question-screen" class="screen hidden">
+        <div id="header">
+          <span id="question-counter">سؤال 1 / 10</span>
+          <span id="timer">⏱ 30</span>
+        </div>
+        <div id="question-box">
+          <p id="question-text"></p>
+          <div id="options"></div>
+        </div>
+      </div>
+
+      <!-- شاشة النتيجة -->
+      <div id="result-screen" class="screen hidden">
+        <h2 id="result-title"></h2>
+        <p id="result-score"></p>
+        <button id="restart-btn">أعد الاختبار</button>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

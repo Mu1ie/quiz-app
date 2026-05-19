@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+/* ---- الشاشات ---- */
+.screen {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---- شاشة البداية ---- */
+#start-screen h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #38bdf8;
+}
+
+#start-screen p {
+  color: #94a3b8;
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+/* ---- الأزرار ---- */
+button {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #7dd3fc;
+}
+
+/* ---- شاشة السؤال ---- */
+#header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+#timer {
+  color: #f87171;
+  font-weight: bold;
+}
+
+#question-text {
+  font-size: 1.3rem;
+  margin-bottom: 28px;
+  line-height: 1.7;
+  color: #f1f5f9;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-btn {
+  background: #334155;
+  color: #f1f5f9;
+  border: 2px solid transparent;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: right;
+  transition: all 0.2s;
+}
+
+.option-btn:hover {
+  border-color: #38bdf8;
+  background: #1e3a5f;
+}
+
+.option-btn.correct {
+  background: #14532d;
+  border-color: #4ade80;
+  color: #4ade80;
+}
+
+.option-btn.wrong {
+  background: #4c1d1d;
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* ---- شاشة النتيجة ---- */
+#result-title {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+#result-score {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 32px;
+}
