@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>اختبار تفاعلي</title>
+    <title>Interactive Quiz</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
 
     <div id="app">
 
-      <!-- شاشة البداية -->
+      <!-- Start Screen -->
       <div id="start-screen" class="screen">
-        <h1>🧠 اختبار المعلومات العامة</h1>
-        <p>10 أسئلة — 30 ثانية لكل سؤال</p>
-        <button id="start-btn">ابدأ الاختبار</button>
+        <h1>🧠 General Knowledge Quiz</h1>
+        <p>10 Questions — 30 Seconds per Question</p>
+        <button id="start-btn">Start Quiz</button>
       </div>
 
-      <!-- شاشة السؤال -->
+      <!-- Question Screen -->
       <div id="question-screen" class="screen hidden">
         <div id="header">
-          <span id="question-counter">سؤال 1 / 10</span>
+          <span id="question-counter">Question 1 / 10</span>
           <span id="timer">⏱ 30</span>
         </div>
         <div id="question-box">
@@ -29,11 +29,11 @@
         </div>
       </div>
 
-      <!-- شاشة النتيجة -->
+      <!-- Result Screen -->
       <div id="result-screen" class="screen hidden">
         <h2 id="result-title"></h2>
         <p id="result-score"></p>
-        <button id="restart-btn">أعد الاختبار</button>
+        <button id="restart-btn">Restart Quiz</button>
       </div>
 
     </div>

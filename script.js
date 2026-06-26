@@ -1,61 +1,61 @@
 // ==============================
-// 1. بيانات الأسئلة
+// 1. Questions Data
 // ==============================
 const questions = [
   {
-    text: "ما هي عاصمة فرنسا؟",
-    options: ["برلين", "مدريد", "باريس", "روما"],
+    text: "What is the capital of France?",
+    options: ["Berlin", "Madrid", "Paris", "Rome"],
     correct: 2,
   },
   {
-    text: "كم عدد أضلاع المثلث؟",
+    text: "How many sides does a triangle have?",
     options: ["2", "3", "4", "5"],
     correct: 1,
   },
   {
-    text: "ما هو أكبر كوكب في المجموعة الشمسية؟",
-    options: ["زحل", "الأرض", "المريخ", "المشتري"],
+    text: "What is the largest planet in the solar system?",
+    options: ["Saturn", "Earth", "Mars", "Jupiter"],
     correct: 3,
   },
   {
-    text: "من كتب رواية 'موبي ديك'؟",
-    options: ["هيمنغواي", "ميلفيل", "ديكنز", "تولستوي"],
+    text: "Who wrote the novel 'Moby Dick'?",
+    options: ["Hemingway", "Melville", "Dickens", "Tolstoy"],
     correct: 1,
   },
   {
-    text: "ما هي أسرع حيوان بري في العالم؟",
-    options: ["الأسد", "النمر", "الفهد", "الذئب"],
+    text: "What is the fastest land animal in the world?",
+    options: ["Lion", "Tiger", "Cheetah", "Wolf"],
     correct: 2,
   },
   {
-    text: "كم عدد ثواني الدقيقة الواحدة؟",
+    text: "How many seconds are in one minute?",
     options: ["30", "60", "90", "120"],
     correct: 1,
   },
   {
-    text: "أي من هذه العناصر رمزه 'O'؟",
-    options: ["ذهب", "أوزون", "أكسجين", "أوسميوم"],
+    text: "Which of these elements has the symbol 'O'?",
+    options: ["Gold", "Ozone", "Oxygen", "Osmium"],
     correct: 2,
   },
   {
-    text: "في أي قارة تقع مصر؟",
-    options: ["آسيا", "أوروبا", "أمريكا", "أفريقيا"],
+    text: "On which continent is Egypt located?",
+    options: ["Asia", "Europe", "America", "Africa"],
     correct: 3,
   },
   {
-    text: "ما هو الرقم الناتج من 8 × 7؟",
+    text: "What is the result of 8 × 7?",
     options: ["54", "56", "58", "64"],
     correct: 1,
   },
   {
-    text: "ما هي لغة البرمجة المستخدمة في هذا التطبيق؟",
+    text: "What programming language is used in this application?",
     options: ["Python", "Java", "JavaScript", "C++"],
     correct: 2,
   },
 ];
 
 // ==============================
-// 2. المتغيرات
+// 2. Variables
 // ==============================
 let currentIndex = 0;
 let score = 0;
@@ -64,7 +64,7 @@ let timeLeft = 30;
 let answered = false;
 
 // ==============================
-// 3. العناصر من HTML
+// 3. HTML Elements
 // ==============================
 const startScreen = document.getElementById("start-screen");
 const questionScreen = document.getElementById("question-screen");
@@ -82,7 +82,7 @@ const resultTitle = document.getElementById("result-title");
 const resultScore = document.getElementById("result-score");
 
 // ==============================
-// 4. بدء الاختبار
+// 4. Start Quiz
 // ==============================
 startBtn.addEventListener("click", startQuiz);
 restartBtn.addEventListener("click", restartQuiz);
@@ -96,13 +96,13 @@ function startQuiz() {
 }
 
 // ==============================
-// 5. عرض السؤال
+// 5. Show Question
 // ==============================
 function showQuestion() {
   answered = false;
   const q = questions[currentIndex];
 
-  questionCounter.textContent = `سؤال ${currentIndex + 1} / ${questions.length}`;
+  questionCounter.textContent = `Question ${currentIndex + 1} / ${questions.length}`;
   questionText.textContent = q.text;
   optionsContainer.innerHTML = "";
 
@@ -118,7 +118,7 @@ function showQuestion() {
 }
 
 // ==============================
-// 6. المؤقت
+// 6. Timer
 // ==============================
 function startTimer() {
   timeLeft = 30;
@@ -139,7 +139,7 @@ function startTimer() {
 }
 
 // ==============================
-// 7. اختيار الإجابة
+// 7. Select Answer
 // ==============================
 function selectAnswer(selectedIndex, btn) {
   if (answered) return;
@@ -166,7 +166,7 @@ function highlightCorrect() {
 }
 
 // ==============================
-// 8. السؤال التالي أو النهاية
+// 8. Next Question or End
 // ==============================
 function nextQuestion() {
   currentIndex++;
@@ -178,7 +178,7 @@ function nextQuestion() {
 }
 
 // ==============================
-// 9. عرض النتيجة
+// 9. Show Result
 // ==============================
 function showResult() {
   questionScreen.classList.add("hidden");
@@ -187,18 +187,18 @@ function showResult() {
   const percentage = (score / questions.length) * 100;
 
   if (percentage >= 80) {
-    resultTitle.textContent = "🏆 ممتاز!";
+    resultTitle.textContent = "🏆 Excellent!";
   } else if (percentage >= 50) {
-    resultTitle.textContent = "👍 جيد!";
+    resultTitle.textContent = "👍 Good!";
   } else {
-    resultTitle.textContent = "📚 تحتاج مراجعة";
+    resultTitle.textContent = "📚 Needs Review";
   }
 
-  resultScore.textContent = `أجبت صح على ${score} من ${questions.length} أسئلة`;
+  resultScore.textContent = `You answered ${score} out of ${questions.length} questions correctly`;
 }
 
 // ==============================
-// 10. إعادة الاختبار
+// 10. Restart Quiz
 // ==============================
 function restartQuiz() {
   resultScreen.classList.add("hidden");
